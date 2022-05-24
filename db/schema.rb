@@ -10,10 +10,58 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_22_034321) do
+ActiveRecord::Schema.define(version: 2022_05_24_211714) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "options", force: :cascade do |t|
+    t.string "text"
+    t.boolean "correct", default: false
+    t.bigint "question_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["question_id"], name: "index_options_on_question_id"
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.string "question"
+    t.integer "score"
+    t.bigint "test_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["test_id"], name: "index_questions_on_test_id"
+  end
+
+  create_table "student_answers", force: :cascade do |t|
+    t.string "option"
+    t.bigint "student_grade_id", null: false
+    t.bigint "question_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["question_id"], name: "index_student_answers_on_question_id"
+    t.index ["student_grade_id"], name: "index_student_answers_on_student_grade_id"
+  end
+
+  create_table "student_grades", force: :cascade do |t|
+    t.integer "score"
+    t.bigint "test_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["test_id"], name: "index_student_grades_on_test_id"
+    t.index ["user_id"], name: "index_student_grades_on_user_id"
+  end
+
+  create_table "tests", force: :cascade do |t|
+    t.string "name"
+    t.string "token"
+    t.time "time"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_tests_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +71,17 @@ ActiveRecord::Schema.define(version: 2022_05_22_034321) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "teacher_role", default: false
+    t.boolean "student_role", default: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "options", "questions"
+  add_foreign_key "questions", "tests"
+  add_foreign_key "student_answers", "questions"
+  add_foreign_key "student_answers", "student_grades"
+  add_foreign_key "student_grades", "tests"
+  add_foreign_key "student_grades", "users"
+  add_foreign_key "tests", "users"
 end
