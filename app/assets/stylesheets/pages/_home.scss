@@ -1,11 +1,22 @@
 // Specific CSS for your home-page
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
 
+.btn-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 0
+}
 .banner {
   background-size: cover;
   background-position: center;
   padding: 150px 0;
   max-height:100%;
+}
+
+.banner img{
+  justify-content: center;
+
 }
 
 .banner h1 {
