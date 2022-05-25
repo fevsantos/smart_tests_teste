@@ -1,6 +1,6 @@
-class CreateTests < ActiveRecord::Migration[6.1]
+class CreateQuizzes < ActiveRecord::Migration[6.1]
   def change
-    create_table :tests do |t|
+    create_table :quizzes do |t|
       t.string :name
       t.string :token
       t.time :time
