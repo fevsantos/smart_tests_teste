@@ -26,11 +26,7 @@
 
 .card-front__tp { color: #fafbfa; }
 
-/* For pricing text on card front cover */
-.card-front__text-price {
-  font-size: 1.2rem;
-  margin-top: -.2rem;
-}
+
 
 /* Back cover */
 
@@ -39,64 +35,8 @@
   color: #333;
 }
 
-/* Icons ===========================================*/
 
-.card-front__icon {
-  fill: #fafbfa;
-  font-size: 3vw;
-  height: 3.25rem;
-  margin-top: -.5rem;
-  width: 3.25rem;
-}
 
-/* Buttons =================================================*/
-
-.inside-page__btn {
-  background-color: transparent;
-  border: 3px solid;
-  border-radius: .5rem;
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-top: 2rem;
-  overflow: hidden;
-  padding: .7rem .75rem;
-  position: relative;
-  text-decoration: none;
-  transition: all .3s ease;
-  width: 90%;
-  z-index: 10;
-}
-
-.inside-page__btn::before {
-  content: "";
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  transform: scaleY(0);
-  transition: all .3s ease;
-  width: 100%;
-  z-index: -1;
-}
-
-.inside-page__btn--quiz {
-  border-color: #0c134e;
-  color: #0c134e;
-}
-
-.inside-page__btn--quiz::before {
-  background-color: #0c134e;
-}
-
-.inside-page__btn:hover {
-  color: #fafbfa;
-}
-
-.inside-page__btn:hover::before {
-  transform: scaleY(1);
-}
-
-/* Layout Structure=========================================*/
 
 
 /* Container to hold all cards in one place */
@@ -193,9 +133,10 @@
 .card-front__tp--quiz {
   background: linear-gradient(
     to bottom,
-    #737cff,
+    #0f3d5e,
     #0c134e
   );
+
 }
 
 /* Front card's bottom section */

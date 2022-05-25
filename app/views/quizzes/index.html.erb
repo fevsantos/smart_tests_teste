@@ -41,7 +41,7 @@
                                Token: <%=quiz.token%>
                                Number of answers: XXX
                             </p>
-                            <a href="#" class="inside-page__btn inside-page__btn--quiz">View details</a>
+                            <%= link_to "Details of your test", quiz_path(quiz), class:"test-btn" %>
                         </div>
                     </div>
                 </div>
