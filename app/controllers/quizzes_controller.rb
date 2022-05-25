@@ -13,8 +13,9 @@ class QuizzesController < ApplicationController
 
   def create
     @quiz = Quiz.new(quiz_params)
+    @quiz.user = current_user
     if @quiz.save
-      redirect_to quiz_path(@quiz)
+      redirect_to @quiz, notice: "Quiz was sucessfully created."
     else
       render :new
     end
@@ -23,6 +24,6 @@ class QuizzesController < ApplicationController
   private
 
   def quiz_params
-    params.require(:quiz).permit(:name, :token)
+    params.require(:quiz).permit(:name, :token, :time)
   end
 end
