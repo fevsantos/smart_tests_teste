@@ -5,16 +5,18 @@
         <h1>Welcome, <%= current_user.name %> to your dashboard.</h1>
         <p>Here are your tests.</p>
       </div>
-      <%# <div class="row"> Here are your tests</div> %>
-      <%# @quiz.each do |quiz|%>
+      <div class="row"> Here are your tests</div>
+            <%= link_to "Create a new test", new_quiz_path, class:"btn btn-primary" %>
        <section class="card-section mt-5">
+       <div class="card-area">
+      <% @quizzes_user.each do |quiz|%>
                 <div class="card">
                     <div class="flip-card">
                         <div class="flip-card__container">
                             <div class="card-front">
                                 <div class="card-front__tp card-front__tp--quiz">
                                 <h2 class="card-front__heading">
-                                Quiz name
+                                <%=quiz.name%>
                                 </h2>
                             </div>
 
@@ -32,18 +34,19 @@
                     <div class="inside-page">
                         <div class="inside-page__container">
                             <h3 class="inside-page__heading inside-page__heading--quiz">
-                                Math test
+                               <%= quiz.name%>
                             </h3>
                             <p class="inside-page__text">
-                               Token: XXXX
+                               Token: <%=quiz.token%>
                                Number of answers: XXX
                             </p>
                             <a href="#" class="inside-page__btn inside-page__btn--quiz">View details</a>
                         </div>
                     </div>
                 </div>
-            </section>
-            <%= link_to "Create a new test", new_quiz_path, class:"btn btn-primary" %>
+                <%end%>
+            </div>
+          </section>
 </div>
         <% else %>
           <h2> STUDENT <h2>
