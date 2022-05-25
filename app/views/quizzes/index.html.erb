@@ -5,13 +5,13 @@
         <h1>Welcome, <%= current_user.name %> to your dashboard.</h1>
         <p>Here are your tests.</p>
       </div>
-<<<<<<< HEAD
-      <%# <div class="row"> Here are your tests</div> %>
-      <%# @quiz.each do |quiz|%>
-=======
+
       <div class="row"> Here are your tests</div>
             <%= link_to "Create a new test", new_quiz_path, class:"btn btn-primary" %>
->>>>>>> bcf6784f5fc3223ce76866beec32ad9c9b970bac
+
+      <div class="row"> Here are your tests</div>
+            <%= link_to "Create a new test", new_quiz_path, class:"btn btn-primary" %>
+
        <section class="card-section mt-5">
        <div class="card-area">
       <% @quizzes_user.each do |quiz|%>
