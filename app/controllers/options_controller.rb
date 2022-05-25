@@ -1,5 +1,6 @@
 class OptionsController < ApplicationController
   def create
+    @quiz = Quiz.find(params[:quiz_id])
     @question = Question.find(params[:question_id])
     @option = Option.new(option_params)
     @option.question = @question
