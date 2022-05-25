@@ -8,7 +8,7 @@ class QuizzesController < ApplicationController
   end
 
   def new
-    @quiz = Test.new
+    @quiz = Quiz.new
   end
 
   def create
@@ -23,6 +23,6 @@ class QuizzesController < ApplicationController
   private
 
   def quiz_params
-    params.require(:quiz).permit(:name)
+    params.require(:quiz).permit(:name, :token)
   end
 end

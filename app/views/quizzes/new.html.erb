@@ -1,0 +1,15 @@
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col">
+      <% if current_user.teacher_role? %>
+        <%= simple_form_for (@quiz) do |f| %>
+          <%= f.input :name %>
+          <%= f.input :token %>
+          <%= f.submit "Create a test", class: "btn btn-secondary" %>
+        <% end %>
+        <% else %>
+        <h1> If you are a student you cannot create a test! </h1>
+        <% end %>
+      </div>
+    </div>
+  </div>

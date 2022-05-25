@@ -2,7 +2,7 @@
   <% if current_user.teacher_role? %>
     <div class="container mt-5">
       <div class="banner_teacher" style='background-image: url(app/assets/images/teacherbanner.jpg)'>
-        <h1> Welcome, <%= current_user.email %> to your dashboard </h1>
+        <h1> Welcome, <%= current_user.name %> to your dashboard </h1>
       </div>
       <div class="row"> Here are your tests</div>
       <%# @quiz.each do |quiz|%>
@@ -42,6 +42,7 @@
                     </div>
                 </div>
             </section>
+            <%= link_to "Create a new test", new_quiz_path, class:"btn btn-primary" %>
 </div>
         <% else %>
           <h2> STUDENT <h2>
