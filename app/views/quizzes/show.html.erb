@@ -1,3 +1,8 @@
 <h1><%= @quiz.name %></h1>
 <h2>Your quiz token is: <%= @quiz.token %></h1>
-<%= link_to "Back", quizzes_path, class:"btn btn-primary" %>
+<h2> Questions</h2>
+<% @questions.each_with_index do |question, n|%>
+<p><%= question.statement %></p>
+<%end%>
+ <%= link_to "Create a question", new_quiz_question_path(@quiz), class:"btn btn-primary" %>
+ <%= link_to "Back", quizzes_path, class:"btn btn-primary" %>
