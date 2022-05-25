@@ -1,4 +1,4 @@
 class Question < ApplicationRecord
-  belongs_to :test
+  belongs_to :quiz
   has_many :options
 end
