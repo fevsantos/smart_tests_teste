@@ -7,9 +7,9 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
   resources :quizzes do
-    resources :questions, only: [ :create, :show, :new] do
-      resources :options, only: [:create, :new]
-    end
+    resources :questions, only: [ :create, :show, :new ] do
+      resources :options, only: [ :create, :new ]
     end
   end
+end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

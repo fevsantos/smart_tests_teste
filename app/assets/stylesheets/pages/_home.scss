@@ -2,12 +2,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
 
 //home
+
 .btn-container{
   display: flex;
-  align-items: center;
   justify-content: space-around;
-  margin-top: -400px;
-  height: 100vh;
+  height: 50vh;
+}
+
+.img-fluid {
+  margin-top: -67px;
 }
 
 .botao-home a {
@@ -35,7 +38,7 @@
   background-size: cover;
   background-position: center;
   padding: 150px 0;
-  max-height:100%;
+  // max-height:100%;
 }
 
 .banner img{
@@ -55,15 +58,15 @@
 
 //create
 .mt-3 {
-  margin-top: 5rem !important;
+  margin-top: 3rem !important;
 }
 //create new
 .mt-5 {
-  margin-top: 15rem !important;
+  margin-top: 12rem !important;
  }
 
  .mt-4 {
-  margin-top: 10rem !important;
+  margin-top: 8rem !important;
  }
 
  //create tests
