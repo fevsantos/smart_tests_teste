@@ -1,16 +1,18 @@
-  <div class="container mt-5">
-    <div class="row">
-      <div class="col">
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-3">
         <% if current_user.teacher_role? %>
           <%= simple_form_for (@quiz) do |f| %>
             <%= f.input :name %>
             <%= f.input :token %>
             <%= f.input :time, as: :time %>
-            <%= f.submit "Create a test", class: "btn btn-secondary" %>
+            <%= f.submit "Create", class: "btn btn-secondary" %>
           <% end %>
         <% else %>
           <h1> If you are a student you cannot create a test! </h1>
         <% end %>
+        <%= link_to "Back", quizzes_path, class:"btn btn-primary" %>
+
       </div>
     </div>
   </div>

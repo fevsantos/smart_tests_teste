@@ -53,8 +53,20 @@
   font-family: 'Montserrat', sans-serif;
 }
 
+//create
+.mt-3 {
+  margin-top: 5rem !important;
+}
+//create new
+.mt-5 {
+  margin-top: 15rem !important;
+ }
 
-
+ //create tests
+ .card-area {
+   display: flex;
+   justify-content: flex-end;
+ }
 
 //botões do devise
 .btn {
@@ -70,7 +82,7 @@
   width: 200px;
   text-align: center;
   font-family: 'Montserrat', sans-serif;
-  margin-top: 30px;
+  margin-top: 20px;
   margin-left: 45px
 }
 

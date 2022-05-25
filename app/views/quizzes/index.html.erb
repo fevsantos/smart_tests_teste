@@ -1,13 +1,14 @@
   <%= render 'shared/navbar' %>
   <% if current_user.teacher_role? %>
-    <div class="container mt-5">
+    <div class="container mt-3">
       <div class="banner_teacher" style='background-image: url(app/assets/images/teacherbanner.jpg)'>
         <h1>Welcome, <%= current_user.name %> to your dashboard.</h1>
+        <p>Here are your tests</p>
       </div>
-      <div class="row"> Here are your tests</div>
+      <%# <div class="row"> Here are your tests</div> %>
             <%= link_to "Create a new test", new_quiz_path, class:"btn btn-primary" %>
 
-       <section class="card-section mt-5">
+       <section class="card-section mt-3">
        <div class="card-area">
       <% @quizzes_user.each do |quiz|%>
                 <div class="card">
