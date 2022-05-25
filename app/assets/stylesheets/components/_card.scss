@@ -98,27 +98,13 @@
 
 /* Layout Structure=========================================*/
 
-.main {
-  background: linear-gradient(
-    to bottom right,
-    #eee8dd,
-    #e3d9c6
-  );
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100vh;
-  width: 100%;
-}
 
 /* Container to hold all cards in one place */
 .card-area {
   align-items: center;
-  display: flex;
-  flex-wrap: nowrap;
-  height: 100%;
-  justify-content: space-evenly;
-  padding: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
 }
 
 /* Card ============================================*/
@@ -128,7 +114,7 @@
   align-items: center;
   display: flex;
   height: 100%;
-  justify-content: center;
+  justify-content: space-around;
   width: 100%;
 }
 
@@ -154,6 +140,7 @@
   visibility: hidden;
   width: 15rem;
   z-index: 100;
+  margin-left: 15px;
 }
 
 /* The outer container's visibility is set to hidden. This is to make everything within the container NOT set to hidden  */
