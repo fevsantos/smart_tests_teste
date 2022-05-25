@@ -1,0 +1,5 @@
+  <% if current_user.teacher_role? %>
+          <h2> TEACHER <h2>
+        <% else %>
+          <h2> STUDENT <h2>
+        <% end %>
