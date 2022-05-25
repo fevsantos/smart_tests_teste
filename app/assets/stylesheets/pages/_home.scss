@@ -16,7 +16,6 @@
 
 .banner img{
   justify-content: center;
-
 }
 
 .banner h1 {
@@ -30,21 +29,7 @@
   font-family: 'Montserrat', sans-serif;
 }
 
-.banner p {
-  font-size: 29px;
-  font-weight: 600;
-  color: white;
-  opacity: .7;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  margin-top: 100px;
-  font-family: 'Montserrat', sans-serif;
-  justify-content: space-around;
-  display: flex;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
-}
-
-a {
+.botao-home {
   text-decoration: none;
   background-color: #0f3d5e;
   border: 2px solid white;
@@ -54,14 +39,15 @@ a {
   font-size: 20px;
   padding: 20px;
   font-family: 'Montserrat', sans-serif;
-  width: 200px;
+  width: 250px;
   text-align: center;
   font-family: 'Montserrat', sans-serif;
 }
 
-a:hover {
+.botao-home:hover {
     background-color:white;
     color: #0f3d5e;
+    text-decoration: none;
   }
 
 .btn {
@@ -91,6 +77,28 @@ a:hover {
   min-height: 1.5rem;
   margin-bottom: 0.125rem;
   margin-left: -12px;
+}
+
+.btn1{
+  text-decoration: none;
+  background-color: rgb(223, 222, 222);
+  font-size: 15px;
+  font-family: 'Montserrat', sans-serif;
+  color: rgb(0, 0, 0);
+  align-items: center;
+  display: flex;
+  text-align: center;
+  width: 130px;
+}
+
+.nav-item {
+  align-items: center;
+  display: flex;
+}
+
+.navbar-lewagon .navbar-brand img {
+  width: 100px;
+  height: 70px;
 }
 
 
