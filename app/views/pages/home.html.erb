@@ -4,11 +4,11 @@
 
     <div class="btn-container">
      <% if user_signed_in? %>
-        <p><%= link_to 'I\'m a teacher', quizzes_path %></p>
-        <p><%= link_to 'I\'m a student', quizzes_path %></p>
+        <p class="botao-home"><%= link_to 'I\'m a teacher', quizzes_path %></p>
+        <p class="botao-home"><%= link_to 'I\'m a student', quizzes_path %></p>
        <% else %>
-          <p><%= link_to 'I\'m a teacher', new_user_session_path %></p>
-          <p><%= link_to 'I\'m a student', new_user_session_path %></p>
+          <p class="botao-home"><%= link_to 'I\'m a teacher', new_user_session_path %></p>
+          <p class="botao-home"><%= link_to 'I\'m a student', new_user_session_path %></p>
           </li>
         <% end %>
     </div>

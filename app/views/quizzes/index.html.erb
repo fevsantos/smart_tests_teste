@@ -1,11 +1,12 @@
+  <%= render 'shared/navbar' %>
   <% if current_user.teacher_role? %>
-    <div class="container">
+    <div class="container mt-5">
       <div class="banner_teacher" style='background-image: url(app/assets/images/teacherbanner.jpg)'>
-        <h1> Welcome to your dashboard </h1>
+        <h1> Welcome, <%= current_user.email %> to your dashboard </h1>
       </div>
       <div class="row"> Here are your tests</div>
       <%# @quiz.each do |quiz|%>
-       <section class="card-section">
+       <section class="card-section mt-5">
                 <div class="card">
                     <div class="flip-card">
                         <div class="flip-card__container">
