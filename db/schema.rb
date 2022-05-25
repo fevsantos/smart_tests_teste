@@ -55,20 +55,10 @@ ActiveRecord::Schema.define(version: 2022_05_25_161426) do
   create_table "questions", force: :cascade do |t|
     t.string "question"
     t.integer "score"
-    t.bigint "quiz_id", null: false
+    t.bigint "test_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["quiz_id"], name: "index_questions_on_quiz_id"
-  end
-
-  create_table "quizzes", force: :cascade do |t|
-    t.string "name"
-    t.string "token"
-    t.time "time"
-    t.bigint "user_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_quizzes_on_user_id"
+    t.index ["test_id"], name: "index_questions_on_test_id"
   end
 
   create_table "student_answers", force: :cascade do |t|
@@ -83,12 +73,22 @@ ActiveRecord::Schema.define(version: 2022_05_25_161426) do
 
   create_table "student_grades", force: :cascade do |t|
     t.integer "score"
-    t.bigint "quiz_id", null: false
+    t.bigint "test_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["quiz_id"], name: "index_student_grades_on_quiz_id"
+    t.index ["test_id"], name: "index_student_grades_on_test_id"
     t.index ["user_id"], name: "index_student_grades_on_user_id"
+  end
+
+  create_table "tests", force: :cascade do |t|
+    t.string "name"
+    t.string "token"
+    t.time "time"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_tests_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -109,10 +109,10 @@ ActiveRecord::Schema.define(version: 2022_05_25_161426) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "options", "questions"
-  add_foreign_key "questions", "quizzes"
-  add_foreign_key "quizzes", "users"
+  add_foreign_key "questions", "tests"
   add_foreign_key "student_answers", "questions"
   add_foreign_key "student_answers", "student_grades"
-  add_foreign_key "student_grades", "quizzes"
+  add_foreign_key "student_grades", "tests"
   add_foreign_key "student_grades", "users"
+  add_foreign_key "tests", "users"
 end
