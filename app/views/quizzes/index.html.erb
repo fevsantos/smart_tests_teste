@@ -5,6 +5,7 @@
         <h1> Welcome, <%= current_user.name %> to your dashboard </h1>
       </div>
       <div class="row"> Here are your tests</div>
+            <%= link_to "Create a new test", new_quiz_path, class:"btn btn-primary" %>
       <%# @quiz.each do |quiz|%>
        <section class="card-section mt-5">
                 <div class="card">
@@ -42,7 +43,6 @@
                     </div>
                 </div>
             </section>
-            <%= link_to "Create a new test", new_quiz_path, class:"btn btn-primary" %>
 </div>
         <% else %>
           <h2> STUDENT <h2>
