@@ -70,4 +70,3 @@ gem 'cloudinary', '~> 1.16.0'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem "omniauth-rails_csrf_protection", "~> 1.0"
-gem "autoprefixer-rails", "10.2.5"

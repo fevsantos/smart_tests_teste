@@ -24,7 +24,7 @@ class QuestionsController < ApplicationController
   private
 
   def question_params
-    params.require(:question).permit(:statement, :score)
+    params.require(:question).permit(:statement, :score, :choices)
   end
 end
 

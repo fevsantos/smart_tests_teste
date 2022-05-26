@@ -2,6 +2,6 @@
 <%= simple_form_for [ @quiz, @question ] do |f| %>
         <%= f.input :statement %>
         <%= f.input :score, collection: 0..10 %>
+        <%= f.input :choices %>
         <%= f.submit :Next, class: 'btn btn-secondary  ' %>
       <% end %>
-
