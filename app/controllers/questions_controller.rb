@@ -1,21 +1,24 @@
 class QuestionsController < ApplicationController
-  before_action :set_question, only: [:show, :edit, :update, :destroy]
+
+  def new
+    @question = Question.new
+    @quiz = Quiz.find(params[:quiz_id])
+    # @question.quiz = @quiz
+  end
 
   def create
     @quiz = Quiz.find(params[:quiz_id])
     @question = Question.new(question_params)
     @question.quiz = @quiz
-    if @question.save
-      redirect_to new_quiz_question_option_path(:quiz_id, :question_id)
-    else
+      if @question.save
+        redirect_to quizzes_path
+      else
       render 'quizzes/show'
-    end
+      end
   end
 
-  def new
-    @question = Question.new
-    @quiz = Quiz.find(params[:quiz_id])
-    @question.quiz = @quiz
+  def show
+    @question = Question.find(params[:id])
   end
 
   private
@@ -24,3 +27,26 @@ class QuestionsController < ApplicationController
     params.require(:question).permit(:statement, :score)
   end
 end
+
+
+# def new
+#   @question = Question.find(params[:question_id])
+#   @option = Option.new
+# end
+
+# def create
+#   @option = Option.new(option_params)
+#   @question = Question.find(params[:question_id])
+#   @option.question = @question
+#   if @option.save
+#     redirect_to quiz_path(@question.quiz)
+#   else
+#     render 'quizzes/show'
+#   end
+# end
+# private
+
+# def option_params
+#   params.require(:option).permit(:text, :correct)
+# end
+# end
