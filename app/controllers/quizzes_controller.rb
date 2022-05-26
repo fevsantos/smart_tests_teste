@@ -12,6 +12,7 @@ class QuizzesController < ApplicationController
 
   def new
     @quiz = Quiz.new
+    @question = Question.new
   end
 
   def create

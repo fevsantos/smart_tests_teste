@@ -1,7 +1,0 @@
-<span> Create your question </span>
-<%= simple_form_for [ @quiz, @question, @option ] do |f| %>
-        <%= f.input :text %>
-        <%= f.input :correct, label: 'Correct answer',
-                      as: :boolean, checked_value: true, unchecked_value: false %>
-        <%= f.submit :Next, class: 'btn btn-secondary' %>
-      <% end %>
