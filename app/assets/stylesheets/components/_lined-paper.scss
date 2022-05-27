@@ -1,0 +1,52 @@
+.lined-paper
+{ background-image: url('caderno.png');
+  //display: flex;
+  position: relative;
+  object-fit: cover;
+  background-repeat: no-repeat;
+  background-size: 718px;
+  justify-content: center;
+  padding: 100px;
+  margin-left: 250px;
+  margin-right: 250px;
+}
+
+.lined-paper h3 {
+  font-weight: bold;
+  color: #000000;
+  text-shadow: 2px 2px 3px, rgba(0, 0, 0, 0.3);
+  margin-left: 150px;
+  // margin-bottom: 100px;
+}
+
+.btnteste {
+  text-decoration: none;
+  background-color: #0f3d5e;
+  border: 2px solid #0f3d5e;
+  color: white;
+  border-radius: 40px;
+  transition-duration: 0.4s;
+  font-size: 15px;
+  padding: 10px;
+  font-family: 'Montserrat', sans-serif;
+  width: 200px;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 150px;
+  margin-left: 120px
+}
+
+.btnteste:hover {
+  background-color:white;
+  color: #0f3d5e;
+}
+
+.botao1 {
+  margin-top: 100px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+}

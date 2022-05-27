@@ -1,13 +1,16 @@
-<div class="lined-paper">
+<%= render 'shared/navbar' %>
 <div class="container">
-<h1><%= @quiz.name %></h1>
-<h2>Your quiz token is: <%= @quiz.token %></h1>
-<h2> Questions</h2>
+<div class="lined-paper">
+  <h3><%= @quiz.name %></h3>
+  <h3>Your quiz token is: <%= @quiz.token %></h3>
+  <h3> Questions</h3>
   <% @questions.each_with_index do |question, n|%>
     <p><%= n+1 %> - Question: <%= question.statement %> </p>
     <p> Choices:  <%= question.choices %></p>
 <%end%>
- <%= link_to "Create a question", new_quiz_question_path(@quiz), class:"btn btn-primary" %>
- <%= link_to "Back", quizzes_path, class:"btn btn-primary" %>
+<div class="botao1">
+ <%= link_to "Create a question", new_quiz_question_path(@quiz), class:"btnteste" %>
+ <%= link_to "Back", quizzes_path, class:"btnteste" %>
  </div>
  </div>
+  </div>
