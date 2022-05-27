@@ -1,54 +1,63 @@
   <%= render 'shared/navbar' %>
   <% if current_user.teacher_role? %>
-    <div class="container mt-3">
-      <div class="banner_teacher" style='background-image: url(app/assets/images/teacherbanner.jpg)'>
+    <div class="container mt-3 mb-3">
         <h1>Welcome, <%= current_user.name %> to your dashboard.</h1>
         <p>Here are your tests</p>
-      </div>
-      <%# <div class="row"> Here are your tests</div> %>
-            <%= link_to "Create a new test", new_quiz_path, class:"btn btn-primary" %>
+          <%= link_to "Create a new test", new_quiz_path, class:"btn btn-primary" %>
 
        <section class="card-section mt-3">
        <div class="card-area">
-      <% @quizzes_user.each do |quiz|%>
-                <div class="card">
-                    <div class="flip-card">
-                        <div class="flip-card__container">
-                            <div class="card-front">
-                                <div class="card-front__tp card-front__tp--quiz">
-                                <h2 class="card-front__heading">
-                                <%=quiz.name%>
-                                </h2>
-                            </div>
-
-                                <div class="card-front__bt">
-                                    <p class="card-front__text-view card-front__text-view--quiz">
-                                        View me
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="card-back">
-                                  </div>
-                        </div>
+        <% @quizzes_user.each do |quiz|%>
+          <div class="card">
+            <div class="flip-card">
+                <div class="flip-card__container">
+                  <div class="card-front">
+                    <div class="card-front__tp card-front__tp--quiz">
+                      <h2 class="card-front__heading">
+                        <%=quiz.name%>
+                      </h2>
                     </div>
-
-                    <div class="inside-page">
-                        <div class="inside-page__container">
-                            <h3 class="inside-page__heading inside-page__heading--quiz">
-                               <%= quiz.name%>
-                            </h3>
-                            <p class="inside-page__text">
-                               Token: <%=quiz.token%>
-                               Number of answers: XXX
-                            </p>
-                            <%= link_to "Details of your test", quiz_path(quiz), class:"test-btn" %>
-                        </div>
+                      <div class="card-front__bt">
+                        <p class="card-front__text-view card-front__text-view--quiz">
+                          View me
+                        </p>
+                      </div>
+                    </div>
+                    <div class="card-back">
                     </div>
                 </div>
-                <%end%>
+              </div>
+              <div class="inside-page">
+                <div class="inside-page__container">
+                  <h3 class="inside-page__heading inside-page__heading--quiz">
+                    <%= quiz.name%>
+                  </h3>
+                  <p class="inside-page__text">
+                  Token: <%=quiz.token%>
+                  Number of answers: XXX
+                  </p>
+                  <%= link_to "Details of your test", quiz_path(quiz), class:"test-btn" %>
+                </div>
+              </div>
             </div>
-          </section>
-</div>
+            <%end%>
+        </div>
+        </section>
+          <button class=coffee>
+        <a href="https://open.spotify.com/playlist/7nCRh8ivvFmxhVqpD6PqM0?si=08f214d682d24cc3">
+              <div>
+                <span>
+                  <p><i class="fa fa-mug-hot"></i> Need a coffee break?</p><p>:)</p>
+                </span>
+              </div>
+              <div>
+                <span>
+                  <h4><i class="fab fa-spotify"></i> Listen our playlist on Spotify</h4>
+                </span>
+              </div>
+          </button>
+        </a>
+      </div>
         <% else %>
           <h2> STUDENT <h2>
         <% end %>
