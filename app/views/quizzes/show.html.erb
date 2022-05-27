@@ -1,9 +1,13 @@
+<div class="lined-paper">
+<div class="container">
 <h1><%= @quiz.name %></h1>
 <h2>Your quiz token is: <%= @quiz.token %></h1>
 <h2> Questions</h2>
-<% @questions.each_with_index do |question, n|%>
-<p>Question: <%= question.statement %>
-Choices:  <%= question.choices %></p>
+  <% @questions.each_with_index do |question, n|%>
+    <p><%= n+1 %> - Question: <%= question.statement %> </p>
+    <p> Choices:  <%= question.choices %></p>
 <%end%>
  <%= link_to "Create a question", new_quiz_question_path(@quiz), class:"btn btn-primary" %>
  <%= link_to "Back", quizzes_path, class:"btn btn-primary" %>
+ </div>
+ </div>

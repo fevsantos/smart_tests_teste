@@ -1,0 +1,18 @@
+.lined-paper
+{ background-image: url('caderno.png');
+  display: flex;
+  object-fit: cover;
+  background-repeat: no-repeat;
+  background-size: 718px;
+  justify-content: space-around;
+  padding: 100px;
+  align-items: center;
+  margin-left: 242px;
+  text-align: center;
+}
+
+.lined-paper h1 {
+  font-weight: bold;
+  color: #0c134e;
+  text-shadow: 2px 2px 3px, rgba(0, 0, 0, 0.3)
+}
